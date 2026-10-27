@@ -1,0 +1,19 @@
+
+# Keep private work out of GitHub
+/eda and other/
+
+# IDE settings
+.idea/
+.vscode/
+.spyproject/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Exclude large generated GeoPackages
+DATA/PROCESSED/*.gpkg
