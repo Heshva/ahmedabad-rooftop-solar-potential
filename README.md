@@ -203,42 +203,41 @@ Consequently, the outputs are preliminary estimates for spatial comparison and p
 
 ## Data Sources and References
 
-The project uses ward boundary data, building footprint data, and solar irradiation data from the following sources.
-
 ### 1. Ahmedabad Ward Boundaries
 
 - **File:** `Wards_ahmd.geojson`
-- **Source:** [GitHub — Ward Boundary Dataset](https://github.com/fdb7a445-2ca3-4b1f-b853-22fbc700e432)
-- **Usage:** Defines the ward polygons used to assign buildings and summarize rooftop solar potential by ward.
+- **Source:** [DataMeet India — Ahmedabad Ward Boundaries](https://github.com/datameet/Municipal_Spatial_Data/blob/master/Ahmedabad/Wards.geojson)
+- **Purpose:** Defines the municipal ward boundaries used for spatial analysis and ward-level solar potential estimation.
+- **Attribution:** DataMeet India community. The repository states that its datasets are shared under CC BY 4.0 unless otherwise specified.
 
 ### 2. Building Footprints
 
 - **File:** `buildings_ahmd.geojson`
-- **Source:** [GISConvert — Building Data Download Page](https://www.gisconvert.org/93fc75ea-c304-4f70-be19-56f810866e7c)
-- **Usage:** Provides building footprint geometries used to estimate rooftop area and potential solar electricity generation.
+- **Download tool:** [GISConvert — Building Footprints](https://gisconvert.org/tools/building-footprints/)
+- **Purpose:** Provides building footprint geometries for estimating rooftop area.
 
-The building dataset used in this project contains records attributed to Google, Microsoft, and OpenStreetMap. These sources may have different licensing and attribution requirements. Refer to the original dataset documentation and applicable licences before redistributing the data.
+To obtain building footprints for the study area, download the ward boundary file from DataMeet, open the GISConvert building-footprints tool, load the ward boundary file, and follow the website's instructions to retrieve and export the footprints.
+
+**Data note:** The GISConvert tool currently describes its building data as OpenStreetMap data. The combined building-footprint file used in this project contains records attributed to multiple sources, so the origin and licence of each source should be verified before redistributing the complete file.
 
 ### 3. Solar Irradiation Data
 
 - **Provider:** NASA Prediction of Worldwide Energy Resources (POWER)
 - **Parameter:** `ALLSKY_SFC_SW_DWN`
 - **Period:** 1 January 2021 – 31 December 2025
-- **Usage:** Provides daily surface solar irradiation values used to estimate annual solar generation.
+- **Purpose:** Supplies daily surface solar irradiation values used to estimate annual rooftop solar electricity generation.
 
 References:
+- [NASA POWER official website](https://power.larc.nasa.gov/)
+- [NASA POWER Daily API documentation](https://power.larc.nasa.gov/docs/services/api/temporal/daily/)
 
-- [NASA POWER Official Website](https://power.larc.nasa.gov/)
-- [NASA POWER Daily API Documentation](https://power.larc.nasa.gov/docs/services/api/temporal/daily/)
-
-The solar irradiation data can be retrieved by running `src/get_solar_irradiance.py`.
+Solar irradiation data can be retrieved by running `src/get_solar_irradiance.py`.
 
 ### Reproducing the Project
 
-Download the input datasets from the links above and place them in `DATA/RAW/` using the filenames specified in the project structure. Follow the workflow in this README to regenerate the processed data, summary tables, maps, and charts.
+Place the downloaded input files in `DATA/RAW/` using the filenames expected by the scripts. Follow the processing workflow documented in this README to regenerate the processed datasets, summary tables, maps, and charts.
 
-**Note:** The download links identify the sources used for this project. Users should verify current data availability, attribution requirements, and licence conditions before reuse.
-
+Users should check the original source pages for current availability, licence conditions, and attribution requirements before reusing or redistributing data.
 
 ## Future Improvements
 
