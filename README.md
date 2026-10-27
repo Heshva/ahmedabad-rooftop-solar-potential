@@ -201,13 +201,44 @@ The ward-level relationship between usable roof area and generation is expected 
 
 Consequently, the outputs are preliminary estimates for spatial comparison and planning, not a bankable engineering assessment.
 
-## Data Sources and Attribution
+## Data Sources and References
 
-- **Ward boundaries:** Ahmedabad ward boundary dataset used in this project.
-- **Building footprints:** Input dataset containing footprints attributed to Google, Microsoft, and OpenStreetMap sources.
-- **Solar irradiation:** NASA POWER project — https://power.larc.nasa.gov/
+The project uses ward boundary data, building footprint data, and solar irradiation data from the following sources.
 
-Before redistributing the raw building data, check the applicable source licences and attribution requirements.
+### 1. Ahmedabad Ward Boundaries
+
+- **File:** `Wards_ahmd.geojson`
+- **Source:** [GitHub — Ward Boundary Dataset](https://github.com/fdb7a445-2ca3-4b1f-b853-22fbc700e432)
+- **Usage:** Defines the ward polygons used to assign buildings and summarize rooftop solar potential by ward.
+
+### 2. Building Footprints
+
+- **File:** `buildings_ahmd.geojson`
+- **Source:** [GISConvert — Building Data Download Page](https://www.gisconvert.org/93fc75ea-c304-4f70-be19-56f810866e7c)
+- **Usage:** Provides building footprint geometries used to estimate rooftop area and potential solar electricity generation.
+
+The building dataset used in this project contains records attributed to Google, Microsoft, and OpenStreetMap. These sources may have different licensing and attribution requirements. Refer to the original dataset documentation and applicable licences before redistributing the data.
+
+### 3. Solar Irradiation Data
+
+- **Provider:** NASA Prediction of Worldwide Energy Resources (POWER)
+- **Parameter:** `ALLSKY_SFC_SW_DWN`
+- **Period:** 1 January 2021 – 31 December 2025
+- **Usage:** Provides daily surface solar irradiation values used to estimate annual solar generation.
+
+References:
+
+- [NASA POWER Official Website](https://power.larc.nasa.gov/)
+- [NASA POWER Daily API Documentation](https://power.larc.nasa.gov/docs/services/api/temporal/daily/)
+
+The solar irradiation data can be retrieved by running `src/get_solar_irradiance.py`.
+
+### Reproducing the Project
+
+Download the input datasets from the links above and place them in `DATA/RAW/` using the filenames specified in the project structure. Follow the workflow in this README to regenerate the processed data, summary tables, maps, and charts.
+
+**Note:** The download links identify the sources used for this project. Users should verify current data availability, attribution requirements, and licence conditions before reuse.
+
 
 ## Future Improvements
 
